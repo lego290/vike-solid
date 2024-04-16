@@ -62,6 +62,9 @@ const config = {
     stream: {
       env: { server: true },
     },
+    Wrapper: {
+      env: { client: true, server: true }
+    },
     // Vike already defines the setting 'name', but we redundantly define it here for older Vike versions (otherwise older Vike versions will complain that 'name` is an unknown config).
     name: {
       env: { config: true }
@@ -80,6 +83,12 @@ declare global {
       Head?: Component;
       /** A component, usually common to several pages, that wraps the root component `Page` */
       Layout?: Component;
+      /**
+       * A component wrapping the the root component `<Page>`.
+       *
+       * https://vike.dev/Wrapper
+       */
+      Wrapper?: Component;
       title?: string | ((pageContext: PageContext) => string);
       favicon?: string;
       /**
